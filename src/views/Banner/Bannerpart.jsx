@@ -11,10 +11,11 @@ const Bannerpart = () => {
           src="https://images.pexels.com/photos/941869/pexels-photo-941869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="First slide"
         />
-        <Carousel.Caption style={{top: '70% ' , transform: 'translateY(-50%)'} }>
+        <Carousel.Caption style={{top: '60% ' , transform: 'translateY(-50%)'} }>
           
           <h3 className='text-primary'>Todays' Special Offer</h3>
           <h1>Doudle Platter</h1>
+          <h1>Order now if you want to avail the offer</h1>
          
         </Carousel.Caption>
       </Carousel.Item>
@@ -25,9 +26,10 @@ const Bannerpart = () => {
           alt="Second slide"
         />
 
-        <Carousel.Caption style={{top: '70% ' , transform: 'translateY(-50%)'} }>
+        <Carousel.Caption style={{top: '60% ' , transform: 'translateY(-50%)'} }>
           <h3 className='text-primary'>Todays' Special Offer</h3>
           <h1 >25% Discount</h1>
+          <h1>Order now if you want to avail the offer</h1>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -37,11 +39,12 @@ const Bannerpart = () => {
           alt="Third slide"
         />
 
-        <Carousel.Caption style={{top: '70% ' , transform: 'translateY(-50%)'} }>
+        <Carousel.Caption style={{top: '60% ' , transform: 'translateY(-50%)'} }>
           <h3 className='text-primary'>Todays' Special Offer</h3>
           <h1>
            Buy 2 Platter, Get free 1 Full Platter
           </h1>
+          <h1>Order now if you want to avail the offer</h1>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
