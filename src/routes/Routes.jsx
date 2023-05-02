@@ -9,6 +9,7 @@ import Bloglayout from "../layout/Bloglayout";
 import Login from "../views/Login/Login";
 import Register from "../views/Register/Register";
 import Card from "../views/Card/Cecfcard";
+import Chefspage from "../views/Chefspage/Chefspage";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
                 element:<Home/>,
                 loader: ()=>fetch ('https://bd-foodi-place-server-farjanaakterlaila.vercel.app/checfs')
             },
+            {
+                path: '/Chefspage/:id',
+                element:<Chefspage/>
+                
+              },
            
         ]
        
