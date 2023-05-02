@@ -3,6 +3,7 @@ import { Button, Container, Nav,  Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+import Active from '../../../ActiveLink/Active';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -24,8 +25,9 @@ const [state, setstate] = useState(false)
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto fs-4">
-            <Link to='/'>Home</Link>
-            <Link to='/blog' className='px-md-5 '>Blog</Link>
+            <Active to='/'>Home</Active>
+            
+            <Active to='/blog' className='px-md-5 '>Blog</Active>
            
            
           </Nav>

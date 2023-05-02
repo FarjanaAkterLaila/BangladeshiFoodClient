@@ -10,10 +10,12 @@ import Login from "../views/Login/Login";
 import Register from "../views/Register/Register";
 import Card from "../views/Card/Cecfcard";
 import Chefspage from "../views/Chefspage/Chefspage";
+import ErrorPage from "../ErrorPage";
 const router = createBrowserRouter([
     {
         path:'/',
         element: <Main/>,
+        errorElement: <ErrorPage />,
         children:[
             {
                 path:'/',
@@ -32,6 +34,7 @@ const router = createBrowserRouter([
     {
         path:'/',
         element: <Bloglayout/>,
+        errorElement: <ErrorPage />,
         children:[
             
             {
