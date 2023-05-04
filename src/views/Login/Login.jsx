@@ -3,8 +3,9 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link , useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-import {  GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import {  GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+
 const Login = () => {
     const auth = getAuth(app);
     const { signIn } = useContext(AuthContext);
@@ -14,13 +15,14 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
     const [error, setError] = useState('');
     const googleProvider = new GoogleAuthProvider();
-
-
+    const githubProvider = new GithubAuthProvider();
+    const [user, setUser] = useState(null);
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        
         console.log(email, password);
         setError('');
         signIn(email, password)
@@ -43,7 +45,7 @@ const Login = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
-                navigate(from, { replace: true })
+                 navigate(from, { replace: true })
                 setUser(loggedInUser);
                
             })
@@ -51,6 +53,20 @@ const Login = () => {
                 console.log(error);
             })
     }
+    // github
+
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+        .then( result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            setUser(loggedUser);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+    
     return (
         <Container className='w-25 mx-auto mt-5 border p-5'>
         <h3>Please Login</h3>
@@ -82,7 +98,9 @@ const Login = () => {
         </Form>
         <div className='text-center mt-4'><p >------------------------or----------------------</p>
         <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> <FaGoogle /> Login with Google</Button>
-            <Button variant="outline-secondary"> <FaGithub></FaGithub> Login with Github</Button></div>
+        
+     
+            <Button  onClick={handleGithubSignIn} variant="outline-secondary"> <FaGithub></FaGithub> Login with Github</Button></div>
     </Container>
     );
 };

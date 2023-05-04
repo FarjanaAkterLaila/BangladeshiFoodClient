@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
@@ -45,11 +46,25 @@ const Register = () => {
                 event.target.reset();
                 setSuccess('User has been created successfully');
                 navigate(from, { replace: true })
+                updateUserData(result.user,name,photo)
             })
             .catch(error => {
                 console.error(error.message);
                 setError(error.message);
             })
+
+    }
+    const updateUserData = (user,name,photo) => {
+        updateProfile(user,{
+            displayName: name,
+            photoURL:photo
+        })
+        .then(()=>{
+            console.log('user name and photo updated')
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
     }
 
     // const handleAccepted = event =>{

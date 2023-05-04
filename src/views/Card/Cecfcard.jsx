@@ -3,10 +3,13 @@ import { Button, Card ,Col, Row } from 'react-bootstrap';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { BiLike } from "react-icons/bi";
 import { FaArrowRight } from 'react-icons/fa';
+import Chefspage from '../Chefspage/Chefspage';
 const Cecfcard = ({ job }) => {
   const navigate = useNavigate()
     const {_id} = job;
     console.log(job._id);
+    
+
     return (
         <div>
            
@@ -20,11 +23,14 @@ const Cecfcard = ({ job }) => {
         <p className="card-text">Numbers of recipes: {job.number_of_recipes}</p>
         <hr/>
         <div className='d-flex justify-content-between'>
-        <div><Button onClick={()=>navigate(`/Chefspage/${_id}`)}>View Recipes Button <FaArrowRight/></Button></div>
+        <div><Button onClick={()=>navigate(`/Chefspage/${_id}`)}>View Recipes Button <FaArrowRight/></Button>
+        
+        </div>
           <div><p className='text-primary'><BiLike style={{fontSize:'1.5rem'}} className='mx-3 text-primary'/>{job.likes} </p></div>
           
         </div>
       </div>
+      
     </div>
   </div>
      

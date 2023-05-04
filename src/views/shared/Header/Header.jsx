@@ -1,13 +1,18 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container, Nav,  Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav,  Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+
 import Active from '../../../ActiveLink/Active';
+
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  //  console.log(user.photoURL);
+  
+  var renderTooltip = <span>name</span>;
 const [state, setstate] = useState(false)
     const handleLogOut = () => {
         logOut()
@@ -34,8 +39,16 @@ const [state, setstate] = useState(false)
           <Nav>
            
             {user && 
-            <FaUserCircle style={{fontSize:'2rem'}} onMouseEnter={()=><i>{user.email}</i>}/> 
-            }
+            
+
+       <div>
+          <Tippy data-tooltip-content={user.Activename} placement="bottom"
+     >  
+          <img src={user.photoURL} alt="" style={{width
+        :'60px' }} className='rounded-circle mx-3' />
+         </Tippy>
+      </div>
+         }
            
             { user ?
               <Button onClick={handleLogOut} variant="secondary">Logout</Button> :

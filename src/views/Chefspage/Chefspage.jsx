@@ -3,13 +3,16 @@ import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { VscHeart } from 'react-icons/vsc';
 import { ToastContainer, toast } from 'react-toastify';
+
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 const Chefspage = () => {
 
 
     const JobdetailId = useParams();
     let Jobdetail = {};
     const [job, setjob] = useState([]);
-    const [isFavorite, setIsFavorite] = useState(false);
+    
 
     useEffect(() => {
         fetch("https://bd-foodi-place-server-farjanaakterlaila.vercel.app/checfs")
@@ -21,15 +24,21 @@ const Chefspage = () => {
             Jobdetail = jobid
         }
     }
-    const handleShowDetails = (id) => {
-        console.log(id);
+    const [bl, setBlog] = useState([])
+    const handtobookMark =(id)=>{
 
-    }
+        let newCart = [];
+       
+        const exists = bl.find(pd => pd.id === id.id);
 
-    const handleFavoriteClick =(id)=>{
-        setIsFavorite(true);
-        // Show toast message
-        toast('This recipe is now your favorite!');
+        if(exists){
+        bl.length=bl.length-1
+           newCart= [...bl, id]
+            toast("You Have Already Bookmarked This Blog!");
+            setBlog(newCart)
+        }
+        
+
 
             }
     return (
@@ -49,27 +58,32 @@ const Chefspage = () => {
 
 
                 </div>
+
                 <h1 className=' py-5' style={{ textAlign: 'center' }}>Top Three Recipes</h1>
+               
                 <div className='col-sm-4 mx-auto '>
 
-                    <div className='card border-1'>
-                        <img src={Jobdetail.recipe_Img1} className="card-img-top " style={{ height: "400px", width: '100%' }} alt="..." />
-                        <div className="card-body w-100 h-100">
-                            <h5 className="card-title mx-3 mt-4 fs-4 fw-bold">Name:  <span className='fs-3 fw-normal'>{Jobdetail.recipe_name1}</span></h5>
-                            <p className='fs-4 mx-3 fw-bold'>Ingredients:  <span className='fs-5 fw-normal'>{Jobdetail.ingredients1}</span></p>
-                            <p className='fs-4 mx-3 fw-bold'> cooking method:  <span className='fs-5 fw-normal'>{Jobdetail.cooking_method1}</span></p>
-                            <hr />
-                            <div className='d-flex justify-content-between'>
-                                <div><VscHeart onClick={handleFavoriteClick}
-        disabled={}/></div>
-                                <div><p className='text-primary'>{Jobdetail.rating1} </p></div>
-
-                            </div>
-                        </div>
-                    </div>
-
+<div className='card border-1'>
+            <img src={Jobdetail.recipe_Img1} className="card-img-top " style={{ height: "400px", width: '100%' }} alt="..." />
+            <div className="card-body w-100 h-100">
+                <h5 className="card-title mx-3 mt-4 fs-4 fw-bold">Name:  <span className='fs-3 fw-normal'>{Jobdetail.recipe_name1}</span></h5>
+                <p className='fs-4 mx-3 fw-bold'>Ingredients:  <span className='fs-5 fw-normal'>{Jobdetail.ingredients1}</span></p>
+                <p className='fs-4 mx-3 fw-bold'> cooking method:  <span className='fs-5 fw-normal'>{Jobdetail.cooking_method1}</span></p>
+                <hr />
+                <div className='d-flex justify-content-between'>
+                    <div><VscHeart onClick={handtobookMark}
+                    /></div>
+                     <div className='d-flex'>
+                                <Rating
+                        style={{ maxWidth: 100 }}
+                        value={Math.round(Jobdetail.rating1 || 0)} readOnly />
+                    <div className='mx-2'>{Jobdetail.rating1}</div></div>
 
                 </div>
+            </div>
+        </div>
+</div>
+                
                 <div className='col-sm-4 mx-auto '>
 
                     <div className='card border-1'>
@@ -80,9 +94,12 @@ const Chefspage = () => {
                             <p className='fs-4 mx-3 fw-bold'> cooking method:  <span className='fs-5 fw-normal'>{Jobdetail.cooking_method2}</span></p>
                             <hr />
                             <div className='d-flex justify-content-between'>
-                            <div><VscHeart onClick={handleFavoriteClick}
-        disabled={isFavorite}/>{isFavorite ? 'Favorited!' : ''}</div>
-                                <div><p className='text-primary'>{Jobdetail.rating2} </p></div>
+                            <div><VscHeart onClick={handtobookMark}/></div>
+                                <div className='d-flex'>
+                                <Rating
+                        style={{ maxWidth: 100 }}
+                        value={Math.round(Jobdetail.rating2 || 0)} readOnly />
+                    <div className='mx-2'>{Jobdetail.rating2}</div></div>
 
                             </div>
                         </div>
@@ -100,9 +117,13 @@ const Chefspage = () => {
                             <p className='fs-4 mx-3 fw-bold'> cooking method:  <span className='fs-5 fw-normal'>{Jobdetail.cooking_method3}</span></p>
                             <hr />
                             <div className='d-flex justify-content-between'>
-                            <div><VscHeart onClick={handleFavoriteClick}
-        disabled={isFavorite}/>{isFavorite ? 'Favorited!' : ''}</div>
-                                <div><p className='text-primary'>{Jobdetail.rating3} </p></div>
+                            <div><VscHeart onClick={handtobookMark}
+        /></div>
+                                 <div className='d-flex'>
+                                <Rating
+                        style={{ maxWidth: 100 }}
+                        value={Math.round(Jobdetail.rating3 || 0)} readOnly />
+                    <div className='mx-2'>{Jobdetail.rating3}</div></div>
 
                             </div>
                         </div>
@@ -110,10 +131,9 @@ const Chefspage = () => {
 
 
                 </div>
-
             </div>
-        </div>
-    );
+            </div>
+            );
 };
 
-export default Chefspage;
+            export default Chefspage;

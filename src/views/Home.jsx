@@ -72,6 +72,65 @@ const Home = () => {
                         }
                          
                     </div>
+
+                    <h1 className='pt-5 text-center text-warning'>Customer Review</h1>
+                    
+      <div class="row row-cols-1 row-cols-md-3 g-4 mx-3">
+        <div class="col">
+          <div class="card border-0  text-center h-100">
+            <img src="https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?w=2000" class="w-25 mx-auto mt-3 card-img-top" alt="..."/>
+            <div class="card-body">
+
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+             
+              <h5 class="text-primary">Nazmin</h5>
+              <p>
+               39/85,Dhaka
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0 text-center h-100">
+            <img src="https://thumbs.dreamstime.com/z/portrait-attractive-cheerful-young-man-smiling-happy-face-human-expressions-emotions-model-beautiful-smile-handsome-145517730.jpg" class="w-25 mx-auto mt-3 card-img-top" alt="..."/>
+            <div class="card-body">
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              
+              <h5 class="text-primary">Ali</h5>
+              <p>
+                CPZ,Chittagong
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card border-0  text-center h-100">
+            <img src="https://static3.bigstockphoto.com/2/9/2/large1500/292115365.jpg" class="w-25 mx-auto mt-3 card-img-top" alt="..."/>
+            <div class="card-body">
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+             
+              <h5 class="text-primary">Mile</h5>
+              <p>
+               Sylte
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <h1 className='pt-5 text-center text-warning'>Our Place</h1>
+      <div class="row row-cols-1 row-cols-md-2 mt-5">
+    <div class="col text-center">
+    <img class="w-50"src="https://media.istockphoto.com/id/1428594094/photo/empty-coffee-shop-interior-with-wooden-tables-coffee-maker-pastries-and-pendant-lights.jpg?b=1&s=170667a&w=0&k=20&c=TTATB_esYszT-yzqQixyDBJeZQfcXjHwDs6-PhnMDcE=" alt=""/>
+  </div>
+  <div class="col">
+    <h4>Your visit to our restaurant will make us happy.Here is the arrangement of everything for you.And along with all our famous chefs with thir magical cooking.</h4>
+
+  </div>
+</div>
         </div>
     );
 };
