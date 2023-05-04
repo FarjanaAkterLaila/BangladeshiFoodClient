@@ -11,7 +11,7 @@ const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
-    const from =  '/login'
+    const from =   '/login'
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleRegister = event => {

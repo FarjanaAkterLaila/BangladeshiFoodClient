@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container, Image, Nav,  Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Button, Container, Image, Nav,  Navbar, OverlayTrigger } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
@@ -7,6 +7,7 @@ import Active from '../../../ActiveLink/Active';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -36,23 +37,25 @@ const [state, setstate] = useState(false)
            
            
           </Nav>
+          {/* { <Tooltip anchorSelect = "#clickable" clickable>
+            <Button>{user.displayName}</Button>
+          </Tooltip> } */}
           <Nav>
            
             {user && 
             
 
-       <div>
-        <p>{user.name}</p>
+       (<div >
+       
+       
+
           <img src={user.photoURL} alt="" style={{width
         :'60px' }} 
-        onMouseEnter={()=>setstate(true)}
-        onMouseLeave={()=>setstate(false)}
         className='rounded-circle mx-3' 
-       
         />
          
       </div>
-         }
+         )}
            
             { user ?
               <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
