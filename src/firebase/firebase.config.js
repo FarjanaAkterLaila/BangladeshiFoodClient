@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log("enviroment variable",import.meta.env.VITE_PASS)
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBipcddXQOEgaFOncNfqNudCfF-EO0PKgA",
-  authDomain: "bd-foodi-place.firebaseapp.com",
-  projectId: "bd-foodi-place",
-  storageBucket: "bd-foodi-place.appspot.com",
-  messagingSenderId: "855385631596",
-  appId: "1:855385631596:web:6b29f7557ca36b875ba149"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
