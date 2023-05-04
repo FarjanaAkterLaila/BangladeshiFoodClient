@@ -25,8 +25,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/Chefspage/:id',
-                element:<PrivateRoute><Chefspage/></PrivateRoute>
-                
+                element:<PrivateRoute><Chefspage/></PrivateRoute>,
+                loader: ({params}) =>fetch(`https://bd-foodi-place-server-farjanaakterlaila.vercel.app/checfs/${params.id}`)
               },
            
         ]
