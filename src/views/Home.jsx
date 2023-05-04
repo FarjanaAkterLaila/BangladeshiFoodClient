@@ -93,7 +93,7 @@ const Home = () => {
         </div>
         <div class="col">
           <div class="card border-0 text-center h-100">
-            <img src="https://thumbs.dreamstime.com/z/portrait-attractive-cheerful-young-man-smiling-happy-face-human-expressions-emotions-model-beautiful-smile-handsome-145517730.jpg" class="w-25 mx-auto mt-3 card-img-top" alt="..."/>
+            <img src="https://media.istockphoto.com/id/1200677760/photo/portrait-of-handsome-smiling-young-man-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=g_ZmKDpK9VEEzWw4vJ6O577ENGLTOcrvYeiLxi8mVuo=" class="w-25 mx-auto mt-3 card-img-top" alt="..."/>
             <div class="card-body">
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
                 content. This content is a little bit longer.</p>

@@ -42,11 +42,15 @@ const [state, setstate] = useState(false)
             
 
        <div>
-          <Tippy content="{dfgh}ggjufuyi" placement="bottom"
-     >
+        <p>{user.name}</p>
           <img src={user.photoURL} alt="" style={{width
-        :'60px' }} className='rounded-circle mx-3' />
-         </Tippy>
+        :'60px' }} 
+        onMouseEnter={()=>setstate(true)}
+        onMouseLeave={()=>setstate(false)}
+        className='rounded-circle mx-3' 
+       
+        />
+         
       </div>
          }
            

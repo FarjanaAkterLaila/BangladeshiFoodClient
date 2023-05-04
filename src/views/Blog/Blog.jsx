@@ -1,10 +1,22 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-
+import { Button, Table } from 'react-bootstrap';
+import Pdf from "react-to-pdf";
 const Blog = () => {
+  const ref = React.createRef();
     return (
         <div className='mx-5'>
-            <h1 className='bg-light text-center pb-5'>Blog page</h1>
+            <div className='d-flex justify-content-around bg-light text-center p-5'>
+            <h1>Blog page</h1>
+            <div>
+            <Pdf targetRef={ref} filename="div-blue.pdf">
+        {({toPdf}) => (
+            <Button  onClick={toPdf}>Download</Button>
+        )}
+    </Pdf>
+  
+            </div>
+            </div>
+            <div ref={ref}>
             <h1 className='d-flex justify-content-center'>Some Question Answer</h1>
             <div className='border border-info bg-primary bg-opacity-10 p-4'>
                 <h2>1.Tell us the differences between uncontrolled and controlled components?</h2>
@@ -91,7 +103,7 @@ const Blog = () => {
                 A custom hook is a React function that may be shared between other components and contains reusable logic. They can aid in reducing repetitious code, enhancing the organization and maintainability of the code, and sharpening the focus of the components on rendering and presentation. Complex logic, such as form validation, data retrieval, or state management, can be handled using custom hooks.</h5>
               
                 </div>
-                
+                </div>
         </div>
     );
 };
