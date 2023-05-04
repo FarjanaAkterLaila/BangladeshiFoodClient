@@ -11,6 +11,7 @@ import Register from "../views/Register/Register";
 import Card from "../views/Card/Cecfcard";
 import Chefspage from "../views/Chefspage/Chefspage";
 import ErrorPage from "../ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/Chefspage/:id',
-                element:<Chefspage/>
+                element:<PrivateRoute><Chefspage/></PrivateRoute>
                 
               },
            

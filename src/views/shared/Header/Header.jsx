@@ -42,8 +42,8 @@ const [state, setstate] = useState(false)
             
 
        <div>
-          <Tippy data-tooltip-content={user.Activename} placement="bottom"
-     >  
+          <Tippy content="{dfgh}ggjufuyi" placement="bottom"
+     >
           <img src={user.photoURL} alt="" style={{width
         :'60px' }} className='rounded-circle mx-3' />
          </Tippy>
