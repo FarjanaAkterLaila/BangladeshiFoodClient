@@ -73,7 +73,7 @@ const [state, setstate] = useState(false)
         :'50px'}} 
         className='rounded-circle mx-3 img-fluid' 
         />
-         <div className='bottom-md-0 ' style={{position:'absolute', left: '80%',transform: 'translateX(-50%)',color: '#fff',padding: '0 10px',top:"20px",right:"10px",cursor: 'pointer'}}>
+         <div style={{position:'absolute', left: '76%',transform: 'translateX(-50%)',color: '#fff',padding: '0 10px',top:"20px",right:"10px",cursor: 'pointer'}}>
         
         <span style={{bottom: '80%',left: '100%',opacity: showTooltip ? 1 : 0,color: '#000',padding: '0 15px',fontSize:'1.5rem'}}>{user.displayName}</span>
       </div>
