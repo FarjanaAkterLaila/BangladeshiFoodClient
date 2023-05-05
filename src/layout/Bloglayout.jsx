@@ -11,7 +11,7 @@ const Bloglayout = () => {
             <Header></Header>
            
             <Outlet></Outlet>
-            <div style={{bottom:'50%' , transform: 'translateY(100%)'}}><Footer></Footer></div>
+            <Footer></Footer>
             
         </div>
     );

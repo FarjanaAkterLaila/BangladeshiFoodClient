@@ -23,7 +23,7 @@ const Recipes = (props) => {
   };
 
     return (
-        <div className='col-sm-4 mx-auto'>
+        <div className='col-sm-4 mx-auto'  >
             
 
                 <div className='card border-1'>
@@ -32,7 +32,7 @@ const Recipes = (props) => {
                         <h5 className="card-title mx-3 mt-4 fs-4 fw-bold">Name:  <span className='fs-3 fw-normal'>{recipe_name}</span></h5>
                         <p className='fs-4 mx-3 fw-bold'>Ingredients:  <span className='fs-5 fw-normal'>{ingredients}</span></p>
                         <p className='fs-4 mx-3 fw-bold'> cooking method:  <span className='fs-5 fw-normal'>{cooking_method}</span></p>
-                        <hr />
+                        <hr/>
                         <div className='d-flex justify-content-between'>
                             <div>
                             {/* <p className='fs-5'>Favorite<VscHeart onClick={() => ( handtobookMark(props.recipes))} /></p> */}
