@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link , useLocation, useNavigate } from 'react-router-dom';
+import { Link , Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import {  GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
@@ -87,7 +87,7 @@ const Login = () => {
             </Button>
             <br />
             <Form.Text className="text-secondary">
-                Don't Have an Account? <Link to="/reg">Register</Link>
+                Don't Have an Account? <Link to='/reg' state={{from: location}} replace>Register</Link>
             </Form.Text>
             <br/>
             <Form.Text className="text-success">

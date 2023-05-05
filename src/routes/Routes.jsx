@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
+import 'react-tooltip/dist/react-tooltip.css'
 import Home from "../views/Home";
 
 import Header from "../views/shared/Header/Header";
